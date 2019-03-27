@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mgdbRentTheRunway');
 
 const rentTheRunwaySchema = mongoose.Schema({
-    itemID: {type: String, Unique: true},
+    productID: {type: String, Unique: true},
     itemName: {type: String},
     designerName: {type: String},
     facebook: {type: String}

@@ -11,16 +11,16 @@ const itemNamePool= [
     'Sha', 'Ira', 'Dress', 'Miya', 'dark', 'light'
 ];
 
-
 const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max)
     return Math.floor(Math.random() * Math.floor(max - min) + min);
 };
 
+//create facebook likes and designer name
 const createItemFLAndDN = function(arr) {
   while (arr.length < 100) {
-      arr.push({itemID: 0, itemName: '', designerName: '', facebookLike: 0})
+      arr.push({productID: 0, itemName: '', designerName: '', facebookLike: 0})
   }
   for (let i = 0; i < arr.length; i++) {
     arr[i].facebookLike = getRandomInt(0, 10000);
@@ -29,6 +29,7 @@ const createItemFLAndDN = function(arr) {
   }
 };
 
+//create itemName
 const createItemName = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       let name = '';
@@ -40,21 +41,22 @@ const createItemName = (arr) => {
     }
 }
 
-const addItemIdNum = function(arr) {
+
+const addproductIDNum = function(arr) {
     count = 0;
     for (let i = 0; i < arr.length; i++) {
         let id = 'HRLA';
         if (count.toString().length === 1) {
             num = id + '00' + count.toString();
-            arr[i].itemID = num;
+            arr[i].productID = num;
             count++;
         } else if (count.toString().length === 2) {
             num = id + '0' + count.toString();
-            arr[i].itemID = num;
+            arr[i].productID = num;
             count++;
         } else if (count.toString().length === 3) {
             num = id + count.toString();
-            arr[i].itemID = num;
+            arr[i].productID = num;
             count++;
         }
     }
@@ -62,20 +64,20 @@ const addItemIdNum = function(arr) {
 
 
 const dummyData = [
-{itemID: 0, itemName: 'Blue Starry Gown', designerName: 'Mischka', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Slate & Willow', designerName: 'Mischka', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Iro', designerName: 'Mischka', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Mara Dress', designerName: 'A.L.C.', facebookLike: 0}, 
-{itemID: 0, itemName: 'Kaitlyn Mini Dress', designerName: 'Blank Halo', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Floral Overlay Dress', designerName: 'ML Monique Lhuillier', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Compact Column Slit Dress', designerName: 'Nicholas', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Blank off Shoulder Dress', designerName: 'Derek Lam Collective', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Blue Lace Miya Dress', designerName: 'Catherine Deane', facebookLike: 0, price: 0}, 
-{itemID: 0, itemName: 'Love Light Jumpsuit', designerName: 'Keepsake', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Blue Starry Gown', designerName: 'Mischka', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Slate & Willow', designerName: 'Mischka', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Iro', designerName: 'Mischka', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Mara Dress', designerName: 'A.L.C.', facebookLike: 0}, 
+{productID: 0, itemName: 'Kaitlyn Mini Dress', designerName: 'Blank Halo', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Floral Overlay Dress', designerName: 'ML Monique Lhuillier', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Compact Column Slit Dress', designerName: 'Nicholas', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Blank off Shoulder Dress', designerName: 'Derek Lam Collective', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Blue Lace Miya Dress', designerName: 'Catherine Deane', facebookLike: 0, price: 0}, 
+{productID: 0, itemName: 'Love Light Jumpsuit', designerName: 'Keepsake', facebookLike: 0, price: 0}, 
 ];
 
 createItemFLAndDN(dummyData);
-addItemIdNum(dummyData);
+addproductIDNum(dummyData);
 createItemName(dummyData);
 
 
