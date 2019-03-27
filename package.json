@@ -1,17 +1,27 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "navbar",
+  "description": "Rent The Runway",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "mongoose": "^5.4.20"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrla28targaryen/navbar.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/hrla28targaryen/navbar/issues"
+  },
+  "homepage": "https://github.com/hrla28targaryen/navbar#readme"
 }

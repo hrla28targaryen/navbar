@@ -1,4 +1,5 @@
-const mongoose = require('require');
+const mongoose = require('mongoose');
+const rentTheRunwayDbModel = require('./index.js');
 
 const designerPool = [
     'Alexander McQueen', 'Betsey Johnson', 'Emilio Pucci', 'Miuccia Prada', 'Riccardo Tisci', 'Le Corbusier', 'Coco Chanel'
@@ -77,6 +78,17 @@ createItemFLAndDN(dummyData);
 addItemIdNum(dummyData);
 createItemName(dummyData);
 
+
+const seedFunc = (arr) => {
+    rentTheRunwayDbModel.create(arr)
+      .then((data) => {
+          console.log('dummy data seeded')
+          mongoose.connection.close();
+      })
+      .catch(err => console.error(err));
+};
+
+seedFunc(dummyData);
 
 
 
