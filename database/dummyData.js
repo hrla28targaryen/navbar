@@ -8,8 +8,12 @@ const designerPool = [
 const itemNamePool= [
     'Chill', 'Lit', 'n', 'Mara', 'Delicate', '1004', 'Payton', 'Chiffon', 'Cropped', 'Column', 'Wrap', 'Isabella', 'Lia',
     'Metallic', 'Deconstructed', 'Hetty', 'Track', 'Nell', 'Ella', 'Tank', 'Tie', 'Wild', 'WildFlower', 'Tiger', 'Ellii', 
-    'Sha', 'Ira', 'Dress', 'Miya', 'dark', 'light'
+    'Sha', 'Ira', 'Miya', 'dark', 'light'
 ];
+
+const cataPool = [
+    'Dress', 'Bag', 'Earrings', 'Activewear', 'Jumpsuits', 'Knits', 'Buttoms', 'Jackets', 'Skirts', 'Pants', 'Tops'
+]
 
 const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -33,15 +37,15 @@ const createItemFLAndDN = function(arr) {
 const createItemName = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       let name = '';
-      const numOfWords = getRandomInt(1, 4);
+      const numOfWords = getRandomInt(1, 3);
       for (let j = 0; j < numOfWords; j++) {
-          name = name + ' ' + itemNamePool[getRandomInt(0, itemNamePool.length)];
+          name = name + ' ' + itemNamePool[getRandomInt(0, itemNamePool.length)] + ' ' +cataPool[getRandomInt(0, cataPool.length)];
       }
       arr[i].itemName = name;
     }
-}
+};
 
-
+//look into padStart when refactor
 const addproductIDNum = function(arr) {
     count = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -83,7 +87,7 @@ createItemName(dummyData);
 
 const seedFunc = (arr) => {
     rentTheRunwayDbModel.create(arr)
-      .then((data) => {
+      .then(() => {
           console.log('dummy data seeded')
           mongoose.connection.close();
       })
